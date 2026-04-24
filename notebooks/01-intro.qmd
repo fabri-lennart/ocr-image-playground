@@ -1,0 +1,54 @@
+---
+title: "Open and Image"
+author: "Fabricio Lennart"
+date: today
+jupyter: python3
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+## Overview
+
+First of all is important to understand that and image is just pixels and for reading it we need to install de following libraries.
+
+```{python}
+from PIL import Image, ImageEnhance
+import pytesseract
+```
+
+
+# Load the data 
+
+```{python}
+product_1 = "../data/meli_product_0.png"
+
+im = Image.open(product_1)
+im.show()
+```
+
+# Data processing
+
+In order to have the text more clear we need to convert them into grayscale and also add some contrasat
+
+```{python}
+img = im.convert("L")
+
+enh = ImageEnhance.Contrast(img)
+new_img = enh.enhance(1.5)
+
+new_img.show()
+```
+
+
+
+
+
+
+
+
+
+
+
+

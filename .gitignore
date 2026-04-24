@@ -1,0 +1,6 @@
+ocr_env/
+__pycache__/
+*.pyc
+.env
+outputs/
+data/
